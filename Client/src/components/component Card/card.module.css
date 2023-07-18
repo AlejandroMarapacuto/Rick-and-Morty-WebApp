@@ -1,0 +1,64 @@
+.container {
+  background-color: RGBA(61, 199, 161, 0.66);
+  width: 13vw;
+  height: 400px;
+  padding: 1em;
+  border-radius: 10px;
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+  display: flex;
+  flex-direction: column;
+  color: yellow;
+  margin-bottom: 50px;
+  text-shadow: 4px 0px 12px rgba(11, 243, 18, 1);
+}
+.container:hover {
+  scale: 1.1;
+}
+.closeButton {
+  background-color: yellow;
+  border: 0px;
+  border-radius: 6px;
+  width: 40px;
+  height: 25px;
+  color: red;
+}
+.closeButton:hover {
+  scale: 1.1;
+  background-color: rgb(146, 109, 109);
+}
+
+.image {
+  border-radius: 10px;
+  /* width: 280px; */
+  /* height: 290px; */
+  margin-top: -15px;
+  margin-left: -15px;
+  max-height: calc(100% -5px);
+  max-width: calc(112%);
+}
+
+.name {
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  text-align: center;
+  color: yellow;
+}
+
+.status {
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+}
+
+.species {
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+}
+
+.gender {
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+}
+
+.divSG {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
