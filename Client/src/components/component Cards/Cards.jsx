@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 
 export default function Cards({ characters, onClose }) {
-  console.log(onClose);
   return (
     <DivContainer>
       {characters.map((char) => {

@@ -16,32 +16,33 @@ function App() {
   const password = "reptile1912199014r";
   const navigate = useNavigate();
 
-  function login(userData) {
+  async function login(userData) {
     const { email, password } = userData;
     const URL = "http://localhost:3001/rickandmorty/login/";
-    axios(URL + `?email=${email}&password=${password}`).then(({ data }) => {
-      const { access } = data;
-      setAccess(data);
-      access && navigate("/home");
-    });
+    const response = await axios(URL + `?email=${email}&password=${password}`);
+    const { access } = response.data;
+    setAccess(response.data);
+    access && navigate("/home");
   }
+
   useEffect(() => {
     !access && navigate("/");
   }, [access]);
 
-  const onSearch = (id) => {
-    axios(`http://localhost:3001/rickandmorty/character/${id}`)
-      .then((response) => {
-        if (
-          response.data.char.name &&
-          !characters.find((char) => char.id === response.data.char.id)
-        ) {
-          setCharacters((oldChars) => [...oldChars, response.data.char]);
-        }
-      })
-      .catch((err) => {
-        alert(err.response.data.msg);
-      });
+  const onSearch = async (id) => {
+    try {
+      const response = await axios(
+        `http://localhost:3001/rickandmorty/character/${id}`
+      );
+      if (
+        response.data.char.name &&
+        !characters.find((char) => char.id === response.data.char.id)
+      ) {
+        setCharacters((oldChars) => [...oldChars, response.data.char]);
+      }
+    } catch (error) {
+      alert("Character not found!");
+    }
   };
 
   const onClose = (id) => {

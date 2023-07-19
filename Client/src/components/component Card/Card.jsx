@@ -5,8 +5,6 @@ import { useSelector, useDispatch } from "react-redux";
 import { useState, useEffect } from "react";
 
 export default function Card(character) {
-  console.log(character.onClose);
-
   const [isFav, setIsFav] = useState(false);
 
   const dispatch = useDispatch();

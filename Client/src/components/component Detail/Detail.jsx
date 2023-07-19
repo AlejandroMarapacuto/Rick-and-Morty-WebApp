@@ -9,7 +9,7 @@ import { Divh1s } from "./styledComponents";
 
 const Detail = () => {
   const { id } = useParams();
-  console.log(id);
+
   const [character, setCharacter] = useState({});
 
   useEffect(() => {
