@@ -5,10 +5,14 @@ import { useDispatch } from "react-redux";
 import { filterCards, orderCards, allFavorites } from "../../redux/actions";
 import { useState } from "react";
 
-const Favorites = () => {
+const Favorites = (props) => {
   const [aux, setAux] = useState(false);
   const myFavorites = useSelector((state) => state.myFavorites);
   const dispatch = useDispatch();
+
+  const doNothing = () => {
+    return;
+  };
 
   const handleOrder = (event) => {
     dispatch(orderCards(event.target.value));
@@ -45,7 +49,7 @@ const Favorites = () => {
             species={char.species}
             gender={char.gender}
             image={char.image}
-            onClose={char.onClose}
+            onClose={doNothing}
           />
         );
       })}
