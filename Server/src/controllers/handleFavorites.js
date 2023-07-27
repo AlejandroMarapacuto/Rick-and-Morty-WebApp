@@ -2,7 +2,7 @@ var myFavorites = [];
 
 const postFav = (req, res) => {
   myFavorites.push(req.body);
-  console.log(req.body);
+
   res.json(myFavorites);
 };
 

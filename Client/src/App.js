@@ -12,8 +12,7 @@ import Favorites from "./components/component Favorites/Favorites";
 function App() {
   const [characters, setCharacters] = useState([]);
   const [access, setAccess] = useState(false);
-  const email = "ale.jacobmp@gmail.com";
-  const password = "reptile1912199014r";
+
   const navigate = useNavigate();
 
   async function login(userData) {
@@ -35,13 +34,13 @@ function App() {
         `http://localhost:3001/rickandmorty/character/${id}`
       );
       if (
-        response.data.char.name &&
-        !characters.find((char) => char.id === response.data.char.id)
+        response.data.char.name
+        // !characters.find((char) => char.id === response.data.char.id)
       ) {
         setCharacters((oldChars) => [...oldChars, response.data.char]);
       }
     } catch (error) {
-      alert("Character not found!");
+      alert(error.response.data.msg);
     }
   };
 

@@ -22,9 +22,9 @@ const getCharById = async (req, res) => {
     res.status(200).json(pj);
   } catch (error) {
     // console.log(error);
-
+    const err = { msg: "Character not found!" };
     // const response = error;
-    return res.status(404).json(error);
+    return res.status(404).json(err);
   }
 };
 
